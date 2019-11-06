@@ -3,6 +3,7 @@ import { Store } from "redux";
 import { History } from "history";
 
 import { logout } from "../shared/store/actions";
+import { openNotification } from "./notificationService";
 
 export const httpService = axios.create({
   baseURL: process.env.REACT_APP_SERVER_URL || window.location.origin,
@@ -23,7 +24,7 @@ export const setupInterceptors = (store: Store, history: History) => {
       return Promise.resolve(response);
     },
     error => {
-      console.log("Interceptors error handled");
+      openNotification(error.message, "error");
       if (error.response.status === 401 || error.response.status === 403) {
         store.dispatch(logout());
         history.push("/");

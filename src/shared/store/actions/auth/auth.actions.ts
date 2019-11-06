@@ -13,7 +13,7 @@ export const setCurrentProvider = (provider: any): AnyAction => ({
 });
 
 export const logout = (): AnyAction => {
-  window.sessionStorage.setItem("accessToken", "");
+  window.localStorage.setItem("accessToken", "");
   return {
     type: types.LOGOUT
   };
