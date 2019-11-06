@@ -1,0 +1,18 @@
+.register-wrapper {
+    min-width: 500px;
+    margin-top: 40px;
+    width: 40vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.register_icon {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.delete-icon {
+    float: right;
+    color: #f44;
+}
