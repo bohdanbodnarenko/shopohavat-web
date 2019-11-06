@@ -20,7 +20,7 @@ const email = yup
   .max(255)
   .email(invalidEmail)
   .required();
-export const validPasswordSchema = yup
+export const password = yup
   .string()
   .min(6, passwordNotLongEnough)
   .max(255)
@@ -28,7 +28,7 @@ export const validPasswordSchema = yup
 
 export const validProviderSchema = yup.object().shape({
   email,
-  password: validPasswordSchema,
+  password,
   name: yup
     .string()
     .min(6, nameNotLongEnough)
@@ -43,3 +43,5 @@ export const validProviderSchema = yup.object().shape({
     .notRequired()
     .url("Not a valid url")
 });
+
+export const validLoginSchema = yup.object().shape({ email, password });

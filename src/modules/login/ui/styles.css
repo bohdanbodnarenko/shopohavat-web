@@ -1,4 +1,4 @@
-.register-wrapper {
+.login-wrapper {
   min-width: 500px;
   margin-top: 40px;
   width: 40vw;
@@ -7,5 +7,4 @@
   left: 50%;
   max-width: 500px;
   transform: translate(-50%, -50%);
-  padding: 10px;
 }

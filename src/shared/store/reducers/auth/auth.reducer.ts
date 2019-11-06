@@ -4,9 +4,8 @@ import * as types from "../../actions/actionTypes";
 import { IAuthState } from "./types";
 
 const initialState: IAuthState = {
-  sessionToken: "",
+  accessToken: "",
   isAuth: false,
-  errors: null,
   currentProvider: null
 };
 
@@ -16,7 +15,7 @@ export const auth = (state = initialState, action: AnyAction) => {
       return {
         ...state,
         isAuth: true,
-        sessionId: action.payload
+        accessToken: action.payload
       };
 
     case types.SET_CURRENT_PROVIDER:

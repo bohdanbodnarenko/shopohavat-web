@@ -1,6 +1,5 @@
 export interface IAuthState {
-  sessionToken: string;
+  accessToken: string;
   isAuth: boolean;
-  errors: [{ path: string; message: string }] | null;
   currentProvider: any | null;
 }

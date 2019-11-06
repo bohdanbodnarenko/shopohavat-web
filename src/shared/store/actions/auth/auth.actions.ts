@@ -2,10 +2,12 @@ import { AnyAction } from "redux";
 
 import * as types from "../actionTypes";
 
-export const loginSuccess = (sessionId: string): AnyAction => ({
-  type: types.LOGIN_SUCCESS,
-  payload: sessionId
-});
+export const loginSuccess = (token: string): AnyAction => {
+  return {
+    type: types.LOGIN_SUCCESS,
+    payload: token
+  };
+};
 
 export const setCurrentProvider = (provider: any): AnyAction => ({
   type: types.SET_CURRENT_PROVIDER,
