@@ -4,9 +4,11 @@ import { Input, Form } from "antd";
 
 const FormItem = Form.Item;
 
-export const InputField: React.SFC<
-  FieldProps<any> & { prefix: React.ReactNode }
-> = ({ field, form: { touched, errors }, ...props }) => {
+export const InputField = ({
+  field,
+  form: { touched, errors },
+  ...props
+}: FieldProps<any> & { prefix: React.ReactNode }) => {
   const errorMsg = touched && touched[field.name] && errors[field.name];
   return (
     <FormItem
