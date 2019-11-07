@@ -24,7 +24,10 @@ export const setupInterceptors = (store: Store, history: History) => {
       return Promise.resolve(response);
     },
     error => {
-      openNotification(error.message, "error");
+      if (!error.response) {
+        openNotification("Server error", "error");
+        return;
+      }
       if (error.response.status === 401 || error.response.status === 403) {
         store.dispatch(logout());
         history.push("/");
@@ -32,6 +35,7 @@ export const setupInterceptors = (store: Store, history: History) => {
       } else {
         if ([400, 404].includes(error.response.status)) {
           //   store.dispatch(addNotification(error.response.data.message));
+          openNotification(error.message, "error");
           return Promise.reject(error.response);
         }
       }

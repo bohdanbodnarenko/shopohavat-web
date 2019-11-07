@@ -16,7 +16,7 @@ export const MainRouter = () => {
         <Route path="/forgot-password/:recoverId" component={ForgotPassword} />
         <Route path="/forgot-password" component={ForgotPassword} />
         <Route path="/admin" component={AdminConnector} />
-        <Route path="/" component={Landing} />
+        <Route path="/" exact component={Landing} />
       </Switch>
     </BrowserRouter>
   );
