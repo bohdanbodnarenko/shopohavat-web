@@ -1,0 +1,28 @@
+.admin-main-layout {
+  width: 100vw;
+  height: 100vh;
+}
+
+.admin-title {
+  font-size: 1.09em;
+  padding: 0 10px;
+  font-weight: 500;
+  color: white;
+  transition: 0.2s ease-in-out;
+}
+
+.admin-content {
+  margin: 10px;
+}
+
+.admin-routes {
+  padding: 24px;
+  background: #fff;
+  height: 100%;
+}
+
+.admin-centered {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+}

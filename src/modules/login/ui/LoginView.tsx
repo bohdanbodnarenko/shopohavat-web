@@ -1,14 +1,14 @@
 import * as React from "react";
+import { useEffect } from "react";
 import { Form, Icon, Button, Typography } from "antd";
 import { withFormik, Field, FormikProps } from "formik";
 import { Link } from "react-router-dom";
 
 import { InputField } from "../../shared/InputField";
 import { LoginFormValues } from "../types";
-import "./styles.css";
 import { validLoginSchema } from "../../register/types";
 import { FieldError } from "../../../shared/types";
-import { useEffect } from "react";
+import "./styles.css";
 
 const FormItem = Form.Item;
 
@@ -36,14 +36,14 @@ const LoginView = (props: IProps & FormikProps<LoginFormValues>) => {
       <Typography.Title>Login</Typography.Title>
       <Field
         name="email"
-        prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+        prefix={<Icon type="user" />}
         placeholder="Email"
         component={InputField}
         type="email"
       />
       <Field
         name="password"
-        prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
+        prefix={<Icon type="lock" />}
         type="password"
         placeholder="Password"
         component={InputField}

@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 
 const { Sider } = Layout;
-const { SubMenu } = Menu;
 
 const SideBar = ({ provider }: any) => {
   const [collapsed, setCollapsed] = useState<boolean>(true);
@@ -22,7 +21,7 @@ const SideBar = ({ provider }: any) => {
       onCollapse={onCollapse}
     >
       <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
-        <Menu.Item key="0" disabled>
+        <Menu.Item key="me" disabled>
           <Icon type="setting" />
           <span className="admin-title">Admin Page</span>
         </Menu.Item>
@@ -32,32 +31,18 @@ const SideBar = ({ provider }: any) => {
             <span>{provider.name}</span>
           </Link>
         </Menu.Item>
-        <SubMenu
-          key="products"
-          title={
-            <span>
-              <Icon type="appstore" />
-              <span>Products</span>
-            </span>
-          }
-        >
-          {/*{displayProviderCategories(data)}*/}
-          <Menu.Item key="5">
-            <Link to="/admin/products/all">All products</Link>
-          </Menu.Item>
-        </SubMenu>
-        <SubMenu
-          key="deliveries"
-          title={
-            <span>
-              <Icon type="car" />
-              <span>Deliveries</span>
-            </span>
-          }
-        >
-          <Menu.Item key="6">Delivery 1</Menu.Item>
-          <Menu.Item key="8">Delivery 2</Menu.Item>
-        </SubMenu>
+        <Menu.Item key="products">
+          <Link to="/admin/products">
+            <Icon type="appstore" />
+            <span>Products</span>
+          </Link>
+        </Menu.Item>
+        <Menu.Item key="deliveries">
+          <Link to="/admin/deliveries">
+            <Icon type="car" />
+            <span>Deliveries</span>
+          </Link>
+        </Menu.Item>
       </Menu>
     </Sider>
   );

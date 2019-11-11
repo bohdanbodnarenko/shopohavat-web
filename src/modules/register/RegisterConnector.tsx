@@ -18,7 +18,7 @@ const RegisterConnector = (props: any) => {
         openNotification("Registration Success", "success");
         props.history.push("/login");
       }
-    } catch ({ response: { data } }) {
+    } catch ({ data }) {
       setErrors(data);
     } finally {
       setLoading(false);

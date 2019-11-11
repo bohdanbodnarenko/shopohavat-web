@@ -33,9 +33,9 @@ export const setupInterceptors = (store: Store, history: History) => {
         history.push("/");
         return Promise.reject(error.response);
       } else {
-        if ([400, 404].includes(error.response.status)) {
+        if (error.response.data.error) {
           //   store.dispatch(addNotification(error.response.data.message));
-          openNotification(error.message, "error");
+          openNotification(error.response.data.error, "error");
           return Promise.reject(error.response);
         }
       }

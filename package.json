@@ -46,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "@types/glob": "^7.1.1",
     "@types/react-router-dom": "^5.1.2",
     "@types/react-router-redux": "^5.0.18",
     "@types/redux": "^3.6.0",

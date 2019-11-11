@@ -25,11 +25,11 @@ const LoginConnector = (props: any) => {
         props.setCurrentProvider(provider);
         props.history.push("/admin");
       }
-    } catch ({ response  }) {
-        if (!response) {
-          return;
-        }
-        const { data } = response;
+    } catch (response) {
+      if (!response) {
+        return;
+      }
+      const { data } = response;
       setErrors(data);
     } finally {
       setLoading(false);

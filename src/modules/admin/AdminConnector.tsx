@@ -1,21 +1,42 @@
 import React from "react";
 import { Layout, Spin } from "antd";
-import { RouteChildrenProps } from "react-router";
+import { RouteChildrenProps, Route, Redirect } from "react-router";
 import { reduxConnect } from "../../shared/hoc/reduxConnector/reduxConnect";
+import SideBar from "./side-bar/SideBar";
 
-// const { Content } = Layout;
+import "./styles.css";
+import Products from "./products/Products";
+
+const { Content } = Layout;
 
 const AdminConnector = ({
   currentProvider,
   isAuth,
+  match: { path },
   ...props
 }: // match
 RouteChildrenProps & any) => {
-  console.log(currentProvider, isAuth);
   if (!currentProvider) {
+    if (!isAuth) {
+      return <Redirect to={"/login"} />;
+    }
     return <Spin />;
   }
-  return <Layout>bla</Layout>;
+  return (
+    <Layout>
+      <SideBar provider={currentProvider} />
+      <Content className="admin-content">
+        <div className="admin-routes">
+          {/*<Route path={`${path}/provider`} component={Provider} />*/}
+          <Route path={`${path}/products`} component={Products} />
+          {/*<Route*/}
+          {/*  path={`${path}/deliveries/:deliveryId`}*/}
+          {/*  component={Deliveries}*/}
+          {/*/>*/}
+        </div>
+      </Content>
+    </Layout>
+  );
 };
 
 export default reduxConnect(
