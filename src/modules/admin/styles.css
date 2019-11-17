@@ -26,3 +26,13 @@
   top: 35%;
   left: 50%;
 }
+
+.add-product-button {
+  position: fixed;
+  right: 4.5vw;
+  bottom: 4vh;
+}
+
+.add-product-modal {
+  top: 15px;
+}

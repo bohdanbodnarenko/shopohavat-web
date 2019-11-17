@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Checkbox, Form, Icon, Input, Modal, Select } from "antd";
 import TextArea from "antd/lib/input/TextArea";
 import { ProductValues, validProductSchema } from "./types";
-import {ICategory} from "../../../utils/entityTypes";
+import { ICategory } from "../../../utils/entityTypes";
 
 interface Props {
   visible: boolean;
@@ -58,6 +58,7 @@ const AddProductModal = ({
     <Modal
       title="Add product"
       visible={visible}
+      className={"add-product-modal"}
       onCancel={onCancel}
       footer={[
         <Button key="submit" type={"primary"} onClick={submit}>

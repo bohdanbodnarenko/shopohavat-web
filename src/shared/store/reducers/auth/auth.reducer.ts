@@ -3,10 +3,11 @@ import { AnyAction } from "redux";
 import * as types from "../../actions/actionTypes";
 import { IAuthState } from "./types";
 
-const currentProvider = window.localStorage.getItem("currentProvider");
+const currentProvider = window.localStorage.getItem("currentProvider"),
+  token = window.localStorage.getItem("accessToken");
 const initialState: IAuthState = {
   accessToken: "",
-  isAuth: !!currentProvider,
+  isAuth: !!token,
   currentProvider: JSON.parse(currentProvider as string) || null
 };
 

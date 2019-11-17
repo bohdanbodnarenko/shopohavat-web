@@ -30,8 +30,9 @@ export const setupInterceptors = (store: Store, history: History) => {
       }
       if (error.response.status === 401 || error.response.status === 403) {
         store.dispatch(logout());
-        history.push("/");
-        return Promise.reject(error.response);
+        openNotification("Your token expired, please login", "warn");
+        history.push("/login");
+        return Promise.reject([error.response]);
       } else {
         if (error.response.data.error) {
           //   store.dispatch(addNotification(error.response.data.message));

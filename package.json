@@ -13,6 +13,7 @@
     "formik": "^2.0.3",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-highlight-words": "^0.16.0",
     "react-phone-input-2": "^2.10.0",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
@@ -47,6 +48,7 @@
   },
   "devDependencies": {
     "@types/glob": "^7.1.1",
+    "@types/react-highlight-words": "^0.16.0",
     "@types/react-router-dom": "^5.1.2",
     "@types/react-router-redux": "^5.0.18",
     "@types/redux": "^3.6.0",
